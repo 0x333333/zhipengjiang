@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>Our timer</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Fullscreen Background Image Slideshow with CSS3 - A Css-only fullscreen background image slideshow" />
+        <meta name="keywords" content="css3, css-only, fullscreen, background, slideshow, images, content" />
+        <meta name="author" content="Zhipeng" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style2.css" />
+        <link rel="stylesheet" type="text/css" href="css/flipclock.css" />
+		<script type="text/javascript" src="js/modernizr.custom.86080.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/flipclock.js"></script>
+
+        <script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-47515905-2', 'zhipengjiang.com');
+		  ga('send', 'pageview');
+
+		</script>
+    </head>
+    <body id="page">
+        <ul class="cb-slideshow">
+          <li><span>Image 01</span><div><h3>You</h3></div></li>
+          <li><span>Image 02</span><div><h3>are</h3></div></li>
+          <li><span>Image 03</span><div><h3>my</h3></div></li>
+          <li><span>Image 04</span><div><h3>whole</h3></div></li>
+          <li><span>Image 05</span><div><h3>world</h3></div></li>
+        </ul>
+        <div class="container">
+            <!-- Codrops top bar -->
+            <div class="codrops-top">
+                <a href="www.zhipengjiang.com">
+                    <strong>Home</strong>
+                </a>
+                <span class="right">
+                    <!-- <a href="http://creativecommons.org/licenses/by-sa/2.0/deed.en" target="_blank">CC BY-SA 2.0</a> -->
+<!--                     <a href="" target="_blank"><strong>Intranet</strong></a>
+					<a href="" target="_blank"><strong>Agenda</strong></a>
+					<a href="" target="_blank"><strong>Presse</strong></a>
+                    <a href="">
+                        <strong>Contact</strong>
+                    </a> -->
+                </span>
+                <div class="clr"></div>
+            </div><!--/ Codrops top bar -->
+			<header>
+                <h1>We have been <span>togather</span></h1>
+                <h2>In memory of happy times</h2>
+                <p class="codrops-demos">
+                    <a href="index.html">Effect 1</a>
+                    <a href="index2.html">Effect 2</a>
+                    <a href="index3.html">Effect 3</a>
+                    <a href="index4.html"  class="current-demo">Effect 4</a>
+                </p>
+            </header>
+            <body>
+                <div class="clock" style="margin-top:100px;margin-left:auto;margin-right:auto;width:620px;"></div>
+                <script type="text/javascript">
+                    function GetDateDiff(startTime, diffType) {
+                        startTime = startTime.replace(/\-/g, "/");
+                        var now = new Date();
+                        var endTime = now.getFullYear()+"/"+(now.getMonth()+1)+"/"+now.getDate()+" "+now.getHours()+":"+now.getMinutes()+":"+now.getSeconds();
+                        endTime = endTime.replace(/\-/g, "/");
+
+                        diffType = diffType.toLowerCase();
+                        var sTime = new Date(startTime);   
+                        var eTime = new Date(endTime); 
+                        var divNum = 1;
+                        switch (diffType) {
+                            case "milsecond":
+                                divNum = 1;
+                                break;
+                            case "second":
+                                divNum = 1000;
+                                break;
+                            case "minute":
+                                divNum = 1000 * 60;
+                                break;
+                            case "hour":
+                                divNum = 1000 * 3600;
+                                break;
+                            case "day":
+                                divNum = 1000 * 3600 * 24;
+                                break;
+                            default:
+                                break;
+                        }
+                        return parseInt((eTime.getTime() - sTime.getTime()) / parseInt(divNum));
+                    }
+
+                    var clock = $('.clock').FlipClock(GetDateDiff("2014-02-23 00:00:00", "second"), {
+                        clockFace: 'DailyCounter',
+                        countdown: false
+                    });
+                </script>
+            </body>
+        </div>
+        <script src="http://tympanus.net/codrops/adpacks/demoad.js"></script>
+    </body>
+</html>
